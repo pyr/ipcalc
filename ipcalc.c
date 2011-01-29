@@ -233,7 +233,7 @@ split(in_addr_t add, u_char pfxlen, char *masktab, int verbose, int cflag)
 				err(1, "out of memory");
 			tab[0] = i;
 		} else {
-			if ((tab = realloc(tab, sz + 1)) == NULL)
+			if ((tab = realloc(tab, (sz + 1) * sizeof(int))) == NULL)
 				err(1, "out of memory");
 			tab[sz] = i;
 		}
